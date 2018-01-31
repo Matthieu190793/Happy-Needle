@@ -1,0 +1,49 @@
+/*----------*/
+/*  CONFIG  */
+/*----------*/
+/* URL */
+/* RESPONSIVE */
+/* SIZE HEADER */
+/* SIZE FOOTER */
+/*
+ajouter gestion des couleurs
+#D9D9D9 : body
+#FFFFFF : nav_bar
+mettre couleur sur h1, h2, p, a
+
+*/
+/*--------*/
+/*  FONT  */
+/*--------*/
+@font-face {
+  font-family: "abril_fatface_regular";
+  src: url(../font/abril_fatface_regular.ttf); }
+@font-face {
+  font-family: "cantarell_regular";
+  src: url(../font/cantarell_regular.ttf); }
+@font-face {
+  font-family: "gentium_book_basic_regular";
+  src: url(../font/gentium_book_basic_regular.ttf); }
+@font-face {
+  font-family: "lato_regular";
+  src: url(../font/lato_regular.ttf); }
+@font-face {
+  font-family: "old_standard_tt_regular";
+  src: url(../font/old_standard_tt_regular.ttf); }
+@font-face {
+  font-family: "open_sans_regular";
+  src: url(../font/open_sans_regular.ttf); }
+@font-face {
+  font-family: "oswlad_regular";
+  src: url(../font/oswlad_regular.ttf); }
+@font-face {
+  font-family: "pt_sans_regular";
+  src: url(../font/pt_sans_regular.ttf); }
+@font-face {
+  font-family: "rokkitt_regular";
+  src: url(../font/rokkitt_regular.ttf); }
+@font-face {
+  font-family: "vollkorn_regular";
+  src: url(../font/vollkorn_regular.ttf); }
+
+/*# sourceMappingURL=font.css.map */

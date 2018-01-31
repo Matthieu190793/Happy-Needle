@@ -1,0 +1,201 @@
+@import "_config.scss";
+/*------------------*/
+/*  HEADER NAV_BAR  */
+/*------------------*/
+
+/* VARIABLES */
+$size_medium:860px!default;
+$size_header_small:3em;
+$size_menu_responsive:100%;
+
+/* SIZE */
+nav#menu
+{
+	float:right;
+	@media all and (max-width:$size_medium)
+	{
+		width:100%;
+		height:auto;
+	}
+	@media all and (min-width:$size_medium)
+	{
+		width:auto;
+		height:100%;
+	}
+}
+
+/* MENU RESPONSIVE */
+input#input_menu[type="checkbox"]
+{
+	display:none;
+}
+@media all and (max-width:$size_medium)
+{
+	label#label_menu
+	{
+		position:absolute;
+		top:0;
+		right:0;
+		width:#{$size_header_small};
+		height:#{$size_header_small};
+		background-image:url(#{$url_img}/nav_cmd_on.svg), url(#{$url_img}/nav_cmd_off.svg);
+		background-repeat:no-repeat, no-repeat;
+		background-position:50% 50%, #{$size_header_small} 50%;
+		background-size:50%, 50%;
+		cursor:pointer;
+		transition:background-position 0.25s linear 0.25s;
+		-webkit-transition:background-position 0.25s linear 0.25s;
+		-moz-transition:background-position 0.25s linear 0.25s;
+		-o-transition:background-position 0.25s linear 0.25s;
+		z-index:10;
+	}
+	input#input_menu[type="checkbox"]:checked ~ label#label_menu
+	{
+		transition:background-position 0.25s linear 0.25s;
+		-webkit-transition:background-position 0.25s linear 0.25s;
+		-moz-transition:background-position 0.25s linear 0.25s;
+		-o-transition:background-position 0.25s linear 0.25s;
+		background-position:-3em 50%, 50% 50%;
+	}
+	div#font_menu
+	{
+		position:fixed;
+		top:0;
+		left:-100%;
+		width:100%;
+		height:100%;
+		background-color:rgba(0, 0, 0, 0);
+		transition:background-color 0.5s linear 0s, left 0s linear 0.5s;
+		-webkit-transition:background-color 0.5s linear 0s, left 0s linear 0.5s;
+		-moz-transition:background-color 0.5s linear 0s, left 0s linear 0.5s;
+		-o-transition:background-color 0.5s linear 0s, left 0s linear 0.5s;
+	}
+	input#input_menu[type="checkbox"]:checked ~ div#font_menu
+	{
+		left:0;
+		background-color:rgba(0, 0, 0, 0.5);
+		transition:left 0s linear 0s, background-color 0.5s linear 0s;
+		-webkit-transition:left 0s linear 0s, background-color 0.5s linear 0s;
+		-moz-transition:left 0s linear 0s, background-color 0.5s linear 0s;
+		-o-transition:left 0s linear 0s, background-color 0.5s linear 0s;
+	}
+}
+@media all and (min-width:$size_medium)
+{
+	label#label_menu, div#font_menu
+	{
+		display:none;
+	}
+}
+
+@media all and (max-width:$size_medium)
+{
+	ul#list_menu
+	{
+		position:fixed;
+		top:0;
+		right:-#{$size_menu_responsive};
+		padding-top:5em;
+		width:#{$size_menu_responsive};
+		height:100%;
+		background-color:#D9D9D9;
+		background-image:url(#{$url_img}/logo.svg);
+		background-repeat:no-repeat;
+		background-position:calc(0% + 1em) calc(100% - 1em);
+		background-size:auto 25%;
+		transition:right 0.5s ease-in 0s;
+		-webkit-transition:right 0.5s ease-in 0s;
+		-moz-transition:right 0.5s ease-in 0s;
+		-o-transition:right 0.5s ease-in 0s;
+		z-index:5;
+	}
+	input[type="checkbox"]:checked ~ ul#list_menu
+	{
+		right:0;
+		transition:right 0.5s ease-out 0s;
+		-webkit-transition:right 0.5s ease-out 0s;
+		-moz-transition:right 0.5s ease-out 0s;
+		-o-transition:right 0.5s ease-out 0s;
+	}
+}
+@media all and (min-width:$size_medium)
+{
+	ul#list_menu
+	{
+		width:auto;
+		height:100%;
+	}
+}
+
+ul#list_menu li
+{
+	@media all and (max-width:$size_medium)
+	{
+		display:block;
+		width:100%;
+		height:auto;
+		background-color:rgba(#969696, 0);
+		transition:background-color 0.2s linear 0s;
+		-webkit-transition:background-color 0.2s linear 0s;
+		-moz-transition:background-color 0.2s linear 0s;
+		-o-transition:background-color 0.2s linear 0s;
+		&:hover
+		{
+			background-color:rgba(#969696, 1);
+			transition:background-color 0.2s linear 0s;
+			-webkit-transition:background-color 0.2s linear 0s;
+			-moz-transition:background-color 0.2s linear 0s;
+			-o-transition:background-color 0.2s linear 0s;
+		}
+	}
+	@media all and (min-width:$size_medium)
+	{
+		display:inline-block;
+		margin-left:0.6em;
+		margin-right:0.6em;
+		padding-left:0.4em;
+		padding-right:0.4em;
+		width:auto;
+		height:100%;
+		background-image:url(#{$url_img}/nav_underline.svg);
+		background-repeat:repeat-x;
+		background-position:50% calc(100% + 0.15em);
+		background-size:auto 0.15em;
+		transition:background-position 0.2s ease-in 0s;
+		-webkit-transition:background-position 0.2s ease-in 0s;
+		-moz-transition:background-position 0.2s ease-in 0s;
+		-o-transition:background-position 0.2s ease-in 0s;
+		&:hover
+		{
+			background-position:50% calc(100% - 0.8em);
+			transition:background-position 0.2s ease-out 0s;
+			-webkit-transition:background-position 0.2s ease-out 0s;
+			-moz-transition:background-position 0.2s ease-out 0s;
+			-o-transition:background-position 0.2s ease-out 0s;
+		}
+	}
+}
+
+ul#list_menu li a
+{
+	font-family:vollkorn;
+	display:block;
+	letter-spacing:0.02em;
+	@media all and (max-width:$size_medium)
+	{
+		font-size:1.5em;
+		line-height:2.2em;
+		text-align:center;
+		line-height:2em;
+		font-weight:none;
+		color:#3B3B3B;
+	}
+	@media all and (min-width:$size_medium)
+	{
+		font-size:1.2em;
+		line-height:3.1em; /*5em - 1.2em*/
+		text-align:center;
+		font-weight:bold;
+		color:#969696;
+	}
+}

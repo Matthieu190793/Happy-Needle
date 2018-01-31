@@ -1,0 +1,26 @@
+@import "_config.scss";
+/*--------*/
+/*  FONT  */
+/*--------*/
+
+$font_list:
+	"abril_fatface_regular",
+	"cantarell_regular",
+	"gentium_book_basic_regular",
+	"lato_regular",
+	"old_standard_tt_regular",
+	"open_sans_regular",
+	"oswlad_regular",
+	"pt_sans_regular",
+	"rokkitt_regular",
+	"vollkorn_regular"
+;
+
+@each $font_list in $font_list
+{
+	@font-face
+	{
+		font-family:"#{$font_list}";
+		src:url(#{$url_font}/#{$font_list}.ttf);
+	}
+}

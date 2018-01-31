@@ -1,0 +1,23 @@
+@import "_config.scss";
+/*----------*/
+/*  FOOTER  */
+/*----------*/
+
+/* VARIABLES */
+$size_medium:860px!default;
+$size_footer_small:4em!default;
+$size_footer_large:6em!default;
+
+footer#end
+{
+	width:100%;
+	background-color:#3B3B3B;
+	@media all and (max-width:$size_medium)
+	{
+		height:$size_footer_small;
+	}
+	@media all and (min-width:$size_medium)
+	{
+		height:$size_footer_large;
+	}
+}

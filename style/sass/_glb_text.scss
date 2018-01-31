@@ -1,0 +1,41 @@
+@import "_config.scss";
+/*--------*/
+/*  TEXT  */
+/*--------*/
+
+h1, h2, p, a
+{
+	line-height:1.2em;
+	text-decoration:none;
+	text-transform:none;
+}
+
+h1, h2
+{
+	font-family:cantarell;
+}
+p, a
+{
+	font-family:cantarell;
+}
+
+h1
+{
+	text-align:center;
+	font-size:1.5em;
+	color:#059AC6;
+}
+h2
+{
+	padding-left:0.8em;
+	text-align:left;
+	font-size:1.2em;
+	color:#0F4961;
+}
+
+p, a
+{
+	text-align:justify;
+	font-size:1em;
+	color:#0F4961;
+}

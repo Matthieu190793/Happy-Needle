@@ -1,0 +1,96 @@
+@import "_config.scss";
+/*--------------*/
+/*  RESPONSIVE  */
+/*--------------*/
+
+/* VARIABLES */
+$nb_columns_grid:12!default;
+$size_gutter:1em!default;
+$size_small:0px!default;
+$size_medium:860px!default;
+$size_large:1280px!default;
+$size_extra:1440px!default;
+$size_grid_zone:80%!default;
+
+
+/* GRID ZONE */
+.grid_zone_std, .grid_zone_all
+{
+	width:100%;
+}
+@for $i from 0 through (($size_extra - $size_large) / 1px)
+{
+	@media all and (min-width:$size_large + $i)
+	{
+		.grid_zone_std
+		{
+			margin:0 auto;
+			width:#{100% - $i * ((100% - $size_grid_zone)/($size_extra - $size_large)) * (1px / 1%)};
+		}
+	}
+}
+
+
+/* GRID DETAILS */
+%grid
+{
+	display:inline-block;
+	vertical-align:top;
+	padding-left:$size_gutter / 2;
+	padding-right:$size_gutter / 2;
+	min-height:1px;
+}
+@mixin init_responsive_grid($suffix)
+{
+	@for $i from 1 through $nb_columns_grid
+	{
+		.grid-#{$suffix}-#{$i}
+		{
+			@extend %grid;
+		}
+	}
+}
+@mixin make_responsive_grid($suffix)
+{
+	@for $i from 0 through $nb_columns_grid
+	{
+		@if $i == 0
+		{
+			.grid-#{$suffix}-#{$i}
+			{
+				display:none;
+			}
+		}
+		@else
+		{
+			.grid-#{$suffix}-#{$i}
+			{
+				width:100% * ($i / $nb_columns_grid);
+			}
+		}
+	}
+}
+
+
+/* GRID */
+@include init_responsive_grid('s');
+@include init_responsive_grid('m');
+@include init_responsive_grid('l');
+
+@include make_responsive_grid('s');
+@media all and (min-width:$size_medium)
+{
+	@include make_responsive_grid('m');
+}
+@media all and (min-width:$size_large)
+{
+	@include make_responsive_grid('l');
+}
+
+
+/* GRID OPTION */
+.no_space
+{
+	padding-left:0;
+	padding-right:0;
+}
